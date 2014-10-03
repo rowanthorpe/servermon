@@ -18,7 +18,8 @@
 import os
 import sys
 parent_path = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.path.pardir))
-sys.path.append(parent_path)
+if parent_path not in sys.path:
+    sys.path.append(parent_path)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'servermon.settings')
 
 try:
